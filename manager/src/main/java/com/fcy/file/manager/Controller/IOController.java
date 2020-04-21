@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.net.PasswordAuthentication;
 import java.net.URLEncoder;
 import java.util.Date;
 import java.util.logging.Level;
@@ -22,7 +23,17 @@ import java.util.logging.Logger;
 @RequestMapping("/file")
 public class IOController {
     private static Logger logger = Logger.getLogger(IOController.class.getName());
-    //处理文件上传
+    @RequestMapping(value="/getFileInfo",method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseVO getFileInfo(@RequestParam("path")String path){
+        PasswordAuthentication passwordAuthentication;
+        File file=new File(path);
+        if (file.exists()&&file.isDirectory()){
+            return ResponseVO.success().data(file.list());
+        }else{
+            return ResponseVO.warning().msg("不合法的路径!");
+        }
+    }
     @RequestMapping(value="/upload", method = RequestMethod.POST)
     @ResponseBody
     public ResponseVO upload(@RequestParam("file")MultipartFile file,

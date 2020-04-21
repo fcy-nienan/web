@@ -3,8 +3,6 @@ package com.fcy.file.manager.VO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.logging.Logger;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
