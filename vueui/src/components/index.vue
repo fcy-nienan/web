@@ -15,7 +15,7 @@
               <Icon type="ios-navigate"></Icon>
               Item 1
             </template>
-            <MenuItem name="1-1">Option 1</MenuItem>
+            <MenuItem name="uploadFile"><RouterLink to="/uploadFile">22222</RouterLink></MenuItem>
             <MenuItem name="1-2">Option 2</MenuItem>
             <MenuItem name="1-3">Option 3</MenuItem>
           </Submenu>
@@ -39,6 +39,7 @@
       </Sider>
       <Layout style="width:80%;height:100%;">
         <Content class="content">
+          <RouterView></RouterView>
           <!--<component v-bind:is="$store.state.main.contentView"></component>-->
         </Content>
       </Layout>
