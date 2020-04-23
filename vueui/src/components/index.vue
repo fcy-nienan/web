@@ -15,31 +15,18 @@
               <Icon type="ios-navigate"></Icon>
               Item 1
             </template>
-            <MenuItem name="uploadFile"><RouterLink to="/uploadFile">22222</RouterLink></MenuItem>
-            <MenuItem name="1-2">Option 2</MenuItem>
-            <MenuItem name="1-3">Option 3</MenuItem>
-          </Submenu>
-          <Submenu name="2">
-            <template slot="title">
-              <Icon type="ios-keypad"></Icon>
-              Item 2
-            </template>
-            <MenuItem name="2-1">Option 1</MenuItem>
-            <MenuItem name="2-2">Option 2</MenuItem>
-          </Submenu>
-          <Submenu name="3">
-            <template slot="title">
-              <Icon type="ios-analytics"></Icon>
-              Item 3
-            </template>
-            <MenuItem name="3-1">Option 1</MenuItem>
-            <MenuItem name="3-2">Option 2</MenuItem>
+            <MenuItem name="upload">
+              <RouterLink to="/index/upload">上传文件</RouterLink>
+            </MenuItem>
+            <MenuItem name="download">
+              <RouterLink to="/index/download">下载文件</RouterLink>
+            </MenuItem>
           </Submenu>
         </Menu>
       </Sider>
       <Layout style="width:80%;height:100%;">
-        <Content class="content">
-          <RouterView></RouterView>
+        <Content class="content" >
+          <RouterView name="main"></RouterView>
           <!--<component v-bind:is="$store.state.main.contentView"></component>-->
         </Content>
       </Layout>
